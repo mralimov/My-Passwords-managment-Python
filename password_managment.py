@@ -12,6 +12,13 @@ def save():
     email = email_label_entry.get()
     password = password_label_entry.get()
 
+    if len(website) == 0 or len(password) == 0:
+        messagebox.showinfo(
+            title="Warning!", message="Please make sure you did not leave any empty fileds.")
+    else:
+        is_ok = messagebox.askyesno(title=website, message=f"Please check your entry: \nEmail: {email}"
+                                    f"\nPassword: {password} \nIs it ok to save?")
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 

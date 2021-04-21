@@ -4,9 +4,16 @@ from random import randint, shuffle, choice
 import pyperclip
 from password_create import password_generator
 
+# ---------------------------- SAVE PASSWORD ------------------------------- #
+
+
+def save():
+    website = website_label_entry.get()
+    email = email_label_entry.get()
+    password = password_label_entry.get()
+
 
 # ---------------------------- UI SETUP ------------------------------- #
-
 
 window = Tk()
 window.title("My Password manager")

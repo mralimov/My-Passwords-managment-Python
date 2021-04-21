@@ -18,6 +18,11 @@ def save():
     else:
         is_ok = messagebox.askyesno(title=website, message=f"Please check your entry: \nEmail: {email}"
                                     f"\nPassword: {password} \nIs it ok to save?")
+        if is_ok:
+            with open("data.txt", "a") as data_file:
+                data_file.write(f"{website} | {password} | {email}\n")
+                website_label_entry.delete(0, END)
+                password_label_entry.delete(0, END)
 
 
 # ---------------------------- UI SETUP ------------------------------- #

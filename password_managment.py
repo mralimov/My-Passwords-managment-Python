@@ -4,6 +4,14 @@ from random import randint, shuffle, choice
 import pyperclip
 from password_create import password_generator
 
+# ---------------------------- PASSWORD GENERATOR ------------------------------- #
+
+
+def insert_new_password():
+    random_new_password = password_generator()
+    password_label_entry.insert(0, random_new_password)
+    pyperclip.copy(random_new_password())
+
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 
@@ -54,7 +62,8 @@ password_label_entry = Entry(width=21)
 password_label_entry.grid(row=3, column=1)
 
 
-generate_button = Button(text="Generate Password", command=password_generator)
+generate_button = Button(text="Generate Password",
+                         command=insert_new_password())
 generate_button.grid(row=3, column=2)
 add_button = Button(text="Add", width=36, command=save)
 add_button.grid(row=4, column=1, columnspan=2)

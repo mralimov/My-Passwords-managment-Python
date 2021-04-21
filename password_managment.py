@@ -33,3 +33,12 @@ email_label_entry.grid(row=2, column=1, columnspan=2)
 email_label_entry.insert(0, "mralimov89@gmail.com")
 password_label_entry = Entry(width=21)
 password_label_entry.grid(row=3, column=1)
+
+
+generate_button = Button(text="Generate Password", command=password_generator)
+generate_button.grid(row=3, column=2)
+add_button = Button(text="Add", width=36, command=save)
+add_button.grid(row=4, column=1, columnspan=2)
+
+
+window.mainloop()

@@ -29,14 +29,18 @@ def save():
     if len(website) == 0 or len(password) == 0:
         messagebox.showinfo(
             title="Warning!", message="Please make sure you did not leave any empty fileds.")
+        with open("data.json", "r") as data_file:
+            # Reading old date
+            new_data2 = json.load(data_file)
     else:
-        is_ok = messagebox.askyesno(title=website, message=f"Please check your entry: \nEmail: {email}"
-                                    f"\nPassword: {password} \nIs it ok to save?")
-        if is_ok:
-            with open("data.txt", "a") as data_file:
-                data_file.write(f"{website} | {password} | {email}\n")
-                website_label_entry.delete(0, END)
-                password_label_entry.delete(0, END)
+        # Updating old data with new data
+        new_data2.update(new_data)
+
+        with open("data.json", 'w') as data_file3:
+            # Saving updated data
+            json.dump(new_data, data_file3, indent=4)
+        website_label_entry.delete(0, END)
+        password_label_entry.delete(0, END)
 
 
 # ---------------------------- UI SETUP ------------------------------- #

@@ -67,7 +67,8 @@ email_label_entry.insert(0, "mralimov89@gmail.com")
 password_label_entry = Entry(width=21)
 password_label_entry.grid(row=3, column=1)
 
-
+search_button = Button(text="Search", width=13, command=find_password)
+search_button.grid(row=1, column=2)
 generate_button = Button(text="Generate Password",
                          command=insert_new_password())
 generate_button.grid(row=3, column=2)

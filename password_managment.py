@@ -50,7 +50,24 @@ def save():
             password_label_entry.delete(0, END)
 
 
+def find_password():
+    website_name = website_label_entry.get()
+    with open("data.json") as data_file:
+        data = json.load(data_file)
+
+    messagebox.showinfo(title="Error", message="No Data File Found.")
+
+    if website_name in data:
+        email = data[website_name]["email"]
+        password = data[website_name]["password"]
+        messagebox.showinfo(title=website_name,
+                            message=f"Email: {email}\nPasswrod: {password}")
+    else:
+        messagebox.showinfo(
+            title=website_name, message=f"Sorry there is no {website_name} in the system. Please create new one!")
+
 # ---------------------------- UI SETUP ------------------------------- #
+
 
 window = Tk()
 window.title("My Password manager")

@@ -87,7 +87,7 @@ email_label.grid(row=2, column=0)
 password_label = Label(text="Password:")
 password_label.grid(row=3, column=0)
 
-website_label_entry = Entry(width=35)
+website_label_entry = Entry(width=30)
 website_label_entry.grid(row=1, column=1, columnspan=2)
 website_label_entry.focus()
 email_label_entry = Entry(width=35)

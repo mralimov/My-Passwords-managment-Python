@@ -3,6 +3,7 @@ from tkinter import messagebox
 from random import randint, shuffle, choice
 import pyperclip
 from password_create import password_generator
+import json
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -19,6 +20,11 @@ def save():
     website = website_label_entry.get()
     email = email_label_entry.get()
     password = password_label_entry.get()
+    new_data = {
+        website: {
+            "email": email,
+            "password": password
+        }}
 
     if len(website) == 0 or len(password) == 0:
         messagebox.showinfo(
